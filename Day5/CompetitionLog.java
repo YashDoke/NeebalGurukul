@@ -1,17 +1,16 @@
-package newpackage;
+package practice;
 
-class CompetitionLog{
+public class CompetitionLog {
 	private int playerNumber;
 	private String completeSets;
 	private String incompleteSets;
 	private int piecesBuilt;
-	
-	CompetitionLog(int playerNumber,String completeSets,String incompleteSets,int piecesBuilt)
-	{
-		this.playerNumber= playerNumber;
-		this.completeSets=completeSets;
-		this.incompleteSets=incompleteSets;
-		this.piecesBuilt=piecesBuilt;
+		
+	CompetitionLog(int playerNumber,String completeSets,String incompleteSets,int piecesBuilt){
+		this.playerNumber = playerNumber;
+		this.completeSets = completeSets;
+		this.incompleteSets = incompleteSets;
+		this.piecesBuilt = piecesBuilt;
 	}
 
 	public int getPlayerNumber() {
@@ -27,7 +26,7 @@ class CompetitionLog{
 	}
 
 	public void setCompleteSets(String completeSets) {
-		this.completeSets += this.completeSets+ completeSets;
+		this.completeSets = completeSets;
 	}
 
 	public String getIncompleteSets() {
@@ -35,7 +34,7 @@ class CompetitionLog{
 	}
 
 	public void setIncompleteSets(String incompleteSets) {
-		this.incompleteSets += this.incompleteSets+ incompleteSets;
+		this.incompleteSets = incompleteSets;
 	}
 
 	public int getPiecesBuilt() {
@@ -43,18 +42,14 @@ class CompetitionLog{
 	}
 
 	public void setPiecesBuilt(int piecesBuilt) {
-		this.piecesBuilt = this.piecesBuilt+piecesBuilt;
+		this.piecesBuilt = piecesBuilt;
 	}
-	public void setEqual()
-	{
-		this.piecesBuilt=0;
-		//this.completeSets="";
-	}
+	
 	public String toString() {
-		return "Player "+playerNumber+" completed the following sets: "+completeSets+"\r\n"
-				+ "Player "+playerNumber+" did not completed the following sets: "+incompleteSets+"\r\n"
-				+ "Player "+playerNumber+" built total of "+piecesBuilt+" pieces";
-				
+		
+		return "Player " + playerNumber + " completed the following sets: " + completeSets + "\n" +
+                "Player " + playerNumber + " did not complete the following sets: " + incompleteSets + "\n" +
+                "Player " + playerNumber + " built a total of " + piecesBuilt + " pieces";
 	}
 	
 }
