@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+   <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+    <form action="#">
+        <div style="margin-bottom: 20px;">
+            <label for="name">Name: </label>
+        <input type="text" name="name" id="" placeholder="Enter your name">
+        </div>
+        <div style="margin-bottom: 20px;">
+            <label for="email">Email: </label>
+        <input type="email" name="email" id="" placeholder="enter yout email">
+        </div>
+        <div style="margin-bottom: 20px;">
+            <label for="password">Password: </label>
+        <input type="password" name="password" id="" placeholder="Enter password">
+        </div>
+        <div style="margin-bottom: 20px;">
+            <label for="logged-in">Stay logged-in </label>
+            <input type="checkbox" name="logged-in" id="" >
+        </div>
+        <div style="margin-bottom: 20px; ">
+            <label for="gender">Gender</label><br>
+            <label for="gender" id="male">Male:</label><input type="radio" name="gender" id="" value="male">
+            <label for="gender" id="female">Female:</label><input type="radio" name="gender" id="" value="female" >
+            <label for="gender">Others:</label><input type="radio" name="gender" id="" value="other">
+        </div>
+        <div style="margin-bottom: 20px;">
+            <label for="gender">Favourite Food</label><br>
+            <input type="checkbox" name="food" id=""> <label for="gender">Pizza</label><br>
+            <input type="checkbox" name="food" id=""> <label for="gender">Misal</label><br>
+            <input type="checkbox" name="food" id=""> <label for="gender">Burger</label><br>
+        </div>
+
+        <div id="food-div" style="margin-bottom: 20px;">
+            <select name="branch" id="" class="foods" >
+                <option value="" class="foods" class="check">Select branch</option>
+                <option value="IT"class="foods"class="check">IT</option>
+                <option value="civil"class="foods"class="check">Civil</option>
+                <option value="mech"class="foods"class="check">Mechanical</option>
+            </select>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <input type="submit" class="green-color transperncy" value="submit" name="submit">
+        </div>
+        
+    </form>
+</body>
+</html>

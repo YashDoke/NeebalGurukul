@@ -1,0 +1,86 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Fuggles&family=Poppins:ital,wght@0,400;1,200;1,300;1,500&family=Roboto+Mono:ital,wght@0,200;0,300;0,500;1,600&display=swap');
+
+
+
+h1{
+    color: blueviolet;
+}
+h1:hover{
+    color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+div{
+    margin: 10px;
+}
+
+label{
+    color: rgb(0, 42, 255);
+    font-size: 20px;
+}
+
+input{
+    border: 2px solid orange;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+input{
+    border: 2px solid orange;
+    font-size: 20px;
+    border-radius: 10px;
+}
+select{
+    width: 200px;
+    height: 20px;
+    
+}
+
+#submit-btn{
+    font-size: 20px;
+    padding: 10px;
+    background-color: rgb(92, 42, 139);
+    color: aliceblue;
+    border: black;
+    border-radius: none;
+}
+p{
+    font-family: 'Poppins', sans-serif;
+}
+#p1{
+    font-family: 'Croissant One', cursive;
+}
+#p2{
+    font-family: 'Fuggles', cursive;
+    font-size: 30px;
+}
+#p3{
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+.form-sec{
+    width: 40%;
+    margin: auto;
+    border: 1px solid black;
+    align-items: center;
+    
+}
+/* .form{
+    width: 50%;
+    margin: auto;
+} */
+
+.menu ul li{
+    /* list-style: none; */
+    display: inline;
+    padding: 0px 10px 0px 10px;
+}
+.menu a:hover{
+    color: rgb(234, 7, 255);
+
+}
+
+.menu ul .desing-link:visited{
+    color: rgb(105, 14, 22);
+}

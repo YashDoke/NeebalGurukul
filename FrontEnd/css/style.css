@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,200;1,300;1,500&display=swap');
+
+
+
+input[type="text"],[type="email"]{
+    color: red;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+input[type="text"]:hover,[type="email"]:hover{
+    border: 1px solid rgb(56, 73, 255);
+    
+}
+#male{
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+}
+#female{
+    font-size: 20px;
+    color: rgb(72, 255, 0);
+    font-weight: bold;
+}
+
+.foods{
+    background-color: antiquewhite;
+}
+
+p{
+    background-color: aqua;
+    color: blue;
+    font-family: 'Poppins', sans-serif;
+}
+
+.green-color{
+    background-color: rgb(109, 255, 119);
+}
+
+.transperncy{
+    opacity: 0.5;
+}
+
+/* Add more paragraphs and add checkbox for login, radio for Age, listbox for courses, Font families added */
