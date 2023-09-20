@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module Amusement_Park {
-}
