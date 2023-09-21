@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .top-bar{
+            background-color: #d5d5d5;
+            height: 300px;
+        }
+        #searchInput{
+            margin-left:400px;
+            margin-top: 50px;
+            width: 300px;
+        }
+
+        #bookList li{
+            width: 850px;
+            height: 70px;
+            list-style-type:none ;
+            border-left: 4px solid rgb(118, 118, 118);
+            padding: 20px;
+            margin-bottom:5px ;
+        }
+        .delete{
+            margin-left: 700px;
+            z-index: 1;
+            position: absolute;
+            top:200;
+            right: 100px;
+            
+        }
+
+        #newBookInput,#hideBooksCheckbox{
+            margin-left: 500px;
+        }
+
+    </style>
+    
+  </head>
+  <body>
+    <section class="container ">
+        <div class="container top-bar border border-2 ">
+            <h2 class="text-center">DOM</h2>
+            <h3 class="text-center">Hello World</h3>
+            <input type="text" id="searchInput"  placeholder="Search Books...">
+        </div>
+
+        <div class="container border border-2">
+            <div>This is an Error Message</div>
+            <div>This is Another Error</div>
+
+            <div class="container">
+                <h2>Books To Read</h2>
+                <ul id="bookList">
+        
+                </ul>
+
+                <input type="checkbox" id="hideBooksCheckbox"> Hide All Books
+                <br>
+                <input type="text" id="newBookInput" class="my-3" placeholder="Enter new book name">
+                <button id="addBookBtn"  class="btn btn-primary">Add </button>
+            </div>
+
+            <div class="container">
+                <button id="aboutBtn" class="btn btn-secondary">About</button>
+                <button id="contactBtn"class="btn btn-secondary" >Contact</button>
+            </div>
+            <div class="container border border-2 my-3">
+                <div id="aboutSection" style="display: block;">
+                    <h2>About Us</h2>
+                    <p>This is the About Us section. </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, voluptate, adipisci, voluptatibus impedit tempora asperiores sunt ab eligendi ullam ipsa labore similique maxime autem laboriosam ex accusamus provident ipsum consequatur.</p>
+                </div>
+                <div id="contactSection" style="display: none;">
+                    <h2>Contact Us</h2>
+                    <p>This is the Contact Us section. </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, ratione cum eos sapiente veritatis est deserunt iure dolore eius ab natus alias, deleniti rem expedita quia libero repudiandae nostrum exercitationem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let books = ["Malgudi Days", "Becoming: Michelle Obama","Gone with the Wind","The Kite Runner"];
+
+        const bookList = document.getElementById("bookList");
+        const searchInput = document.getElementById("searchInput");
+        const hideBooksCheckbox = document.getElementById("hideBooksCheckbox");
+        const newBookInput = document.getElementById("newBookInput");
+        const addBookBtn = document.getElementById("addBookBtn");
+
+        function renderBooks() {
+        bookList.innerHTML = "";
+        const searchText = searchInput.value.toLowerCase();
+        books.forEach((book, index) => {
+            const bookLowerCase = book.toLowerCase();
+            if ((!hideBooksCheckbox.checked || bookLowerCase.includes(searchText)) && bookLowerCase.includes(searchText)) {
+                const li = document.createElement("li");
+                li.innerHTML = ` ${book} <button class="btn btn-danger delete" data-index="${index}">Delete</button> `;
+                bookList.appendChild(li);
+
+                li.querySelector("button").addEventListener("click", (event) => {
+                    const index = event.target.getAttribute("data-index");
+                    books.splice(index, 1);
+                    renderBooks();
+                });
+            }
+            if (hideBooksCheckbox.checked){
+                bookList.style.display="none";
+            }
+            if (!hideBooksCheckbox.checked){
+                bookList.style.display="block";
+            }
+        });
+    }
+
+    searchInput.addEventListener("input", renderBooks);
+
+    hideBooksCheckbox.addEventListener("change", renderBooks);
+
+    addBookBtn.addEventListener("click", () => {
+        const newBookName = newBookInput.value.trim();
+        if (newBookName) {
+            books.push(newBookName);
+            newBookInput.value = "";
+            renderBooks();
+        }
+    });
+
+    const aboutBtn = document.getElementById("aboutBtn");
+        const aboutSection = document.getElementById("aboutSection");
+        aboutBtn.addEventListener("click", () => {
+            aboutSection.style.display = "block";
+            contactSection.style.display = "none"; 
+        });
+
+     
+        const contactBtn = document.getElementById("contactBtn");
+        const contactSection = document.getElementById("contactSection");
+        contactBtn.addEventListener("click", () => {
+            contactSection.style.display = "block";
+            aboutSection.style.display = "none";
+        });
+    renderBooks();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
