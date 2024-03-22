@@ -1,0 +1,10 @@
+Steps to be followed are as below:
+
+Step 1: OPEN CMD and set the class path
+set CLASSPATH=bcmail-jdk16-1.44.jar;bcprov-jdk16-1.44.jar;gson-2.10.1.jar;
+Step 2: javac -cp "bcprov-jdk16-1.44.jar;bcmail-jdk16-1.44.jar;" p2j.java
+Step 3:java p2j certificate.pfx emudhra output.jks
+step 4: Change all the input data as per requirement in pkcs7gen.java file.
+Step 5:javac -cp "bcprov-jdk16-1.44.jar;bcmail-jdk16-1.44.jar;gson-2.10.1.jar;" pkcs7gen.java
+Step 6: java pkcs7gen output.jks emudhra data1.sig
+Step 7: Change all the request header value in APIBasedAPIHit.java file.
