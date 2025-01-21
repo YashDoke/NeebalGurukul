@@ -8,3 +8,6 @@ step 4: Change all the input data as per requirement in pkcs7gen.java file.
 Step 5:javac -cp "bcprov-jdk16-1.44.jar;bcmail-jdk16-1.44.jar;gson-2.10.1.jar;" pkcs7gen.java
 Step 6: java pkcs7gen output.jks emudhra data1.sig
 Step 7: Change all the request header value in APIBasedAPIHit.java file.
+
+
+https://abcitsm-smartit.onbmc.com/smartit/app/#/ticket-consoleStudio
